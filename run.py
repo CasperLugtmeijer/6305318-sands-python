@@ -1,4 +1,5 @@
 from signals import generate_sine_wave
+import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
     frequency = 5
@@ -8,4 +9,12 @@ if __name__ == "__main__":
 
 print("First 10 time samples:", t[:10])
 print("First 10 signal samples:", x[:10])
+
+plt.plot(t, x)
+plt.xlabel("Time [s]")
+plt.ylabel("Amplitude")
+plt.title("5 Hz sine, 2 s, 100 Hz sampling")
+plt.grid(True)
+plt.show()
+
 

@@ -17,15 +17,12 @@ plt.grid(True)
 plt.show()
 
 # Square function
-from signals2 import genarate_square
+from signals2 import generate_square
 
-frequency = 5 
-duration = 2
-sample_rate = 100
 amplitude = 1.0
 duty = 0.5
-
-plt.plot(t, x)
+t2, x2 = generate_square(frequency, duration, sample_rate, amplitude=amplitude, duty=duty)
+plt.plot(t2, x2, drawstyle="steps-post")
 plt.xlabel("Time [s]")
 plt.ylabel("Amplitude")
 plt.title("Square wave")

@@ -15,3 +15,19 @@ plt.ylabel("Amplitude")
 plt.title("5 Hz sine, 2 s, 100 Hz sampling")
 plt.grid(True)
 plt.show()
+
+# Square function
+from signals2 import genarate_square
+
+frequency = 5 
+duration = 2
+sample_rate = 100
+amplitude = 1.0
+duty = 0.5
+
+plt.plot(t, x)
+plt.xlable("Time [s]")
+plt.ylabel("Amplitude")
+plt.title("Square wave")
+plt.grid(True)
+plt.show()

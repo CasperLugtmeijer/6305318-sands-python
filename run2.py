@@ -17,14 +17,26 @@ plt.grid(True)
 plt.show()
 
 # Square function
-from signals2 import generate_square
+from signals2 import generate_square, time_shift
 
 amplitude = 1.0
 duty = 0.5
 t2, x2 = generate_square(frequency, duration, sample_rate, amplitude=amplitude, duty=duty)
+tau = 0.2
+_,x2_shift = time_shift(t2,x2, shift_seconds=tau, sample_rate=sample_rate)
+
 plt.plot(t2, x2, drawstyle="steps-post")
 plt.xlabel("Time [s]")
 plt.ylabel("Amplitude")
 plt.title("Square wave")
 plt.grid(True)
+plt.show()
+
+plt.plot(t2, x2, drawstyle="steps-post", label="original")
+plt.plot(t2, x2_shift, drawstyle="steps-post", label=f"shift +{tau}s")
+plt.xlabel("Time [s]")
+plt.ylabel("Amplitude")
+plt.title("Square wave with time shift")
+plt.grid(True)
+plt.legend()
 plt.show()

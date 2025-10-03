@@ -40,3 +40,20 @@ plt.title("Square wave with time shift")
 plt.grid(True)
 plt.legend()
 plt.show()
+
+from signals2 import add_signals
+f1 = 5
+f2 = 12
+t,x1 = generate_sine_wave(f1, duration, sample_rate)
+_, x2 = generate_sine_wave(f2, duration, sample_rate)
+_, y = add_signals(t, x1, x2)
+
+plt.figure()
+plt.plot(t, x1, label=f"{f1} Hz")
+plt.plot(t, x2, label=f"{f2} Hz")
+plt.plot(t, y,  label="sum", linewidth=2)
+plt.xlabel("Time [s]")
+plt.ylabel("Amplitude")
+plt.title("Addition of two sines")
+plt.grid(True)
+plt.show()

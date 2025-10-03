@@ -14,7 +14,7 @@ plt.xlabel("Time [s]")
 plt.ylabel("Amplitude")
 plt.title("5 Hz sine, 2 s, 100 Hz sampling")
 plt.grid(True)
-plt.show()
+
 
 # Square function
 from signals2 import generate_square, time_shift
@@ -30,7 +30,7 @@ plt.xlabel("Time [s]")
 plt.ylabel("Amplitude")
 plt.title("Square wave")
 plt.grid(True)
-plt.show()
+
 
 plt.plot(t2, x2, drawstyle="steps-post", label="original")
 plt.plot(t2, x2_shift, drawstyle="steps-post", label=f"shift +{tau}s")
@@ -39,7 +39,7 @@ plt.ylabel("Amplitude")
 plt.title("Square wave with time shift")
 plt.grid(True)
 plt.legend()
-plt.show()
+
 
 from signals2 import add_signals
 f1 = 5
@@ -57,4 +57,5 @@ plt.ylabel("Amplitude")
 plt.title("Addition of two sines")
 plt.grid(True)
 plt.legend()
+
 plt.show()

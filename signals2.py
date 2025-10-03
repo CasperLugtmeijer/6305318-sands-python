@@ -22,6 +22,6 @@ def time_shift(t, x, shift_seconds, sample_rate):
     return t, y
 
 def add_signals(t, x1, x2):
-    if len(x1) = len(x2):
+    if len(x1) != len(x2): # not equal to
         raise ValueError ("Signals must have the same length")
     return t, x1, x2

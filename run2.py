@@ -26,7 +26,7 @@ amplitude = 1.0
 duty = 0.5
 
 plt.plot(t, x)
-plt.xlable("Time [s]")
+plt.xlabel("Time [s]")
 plt.ylabel("Amplitude")
 plt.title("Square wave")
 plt.grid(True)

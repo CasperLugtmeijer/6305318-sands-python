@@ -19,5 +19,4 @@ def time_shift(t, x, shift_seconds, sample_rate):
         y[n:]=x[:len(x)-n]
     else:
         y[len(x)+n] = x[-n:]
-
-return t, y
+    return t, y

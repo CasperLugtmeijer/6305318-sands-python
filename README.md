@@ -9,7 +9,7 @@ Project for generating and manipulating basic signals and plotting them
 # Notes
     1) Change parameters (frequency, duration, sample_rate, amplitude, duty, tau) directly in "run2.py"
     2) Square waves are plotted with drawstyle="steps-post" so they look rectangular
-    3)All signal generation functions are in "signals2.py", plotting happens in "run2.py"
+    3) All signal generation functions are in "signals2.py", plotting happens in "run2.py"
 
 # Whats inside the files
     signals2.py:

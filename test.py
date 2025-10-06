@@ -1,10 +1,10 @@
-def add (a,b):
+def add (a, b):
     """return the sum of a and b"""
     return a + b
 
 help(add)
 
-def multiply (a,b):
+def multiply (a, b):
     """
     Mutliply two numbers
 
@@ -16,4 +16,5 @@ def multiply (a,b):
     int/float: Product of a and b
     """
     return a * b
-    
+
+help(multiply)

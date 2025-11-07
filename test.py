@@ -5,7 +5,6 @@ def test_generate_sine_wave():
     """
     Sine: correct length, starts at 0, and reaches +1 at a quarter period.Also checks the  edge case duration=0 returns empty arrays.
     """
-    
     t, y = generate_sine_wave(5, 2, 100)
     assert len(t) == 200
     assert y[0] == 0
@@ -36,7 +35,8 @@ def test_generate_square():
 
 def test_time_shift():
     """
-    
+    Time shift: positive shift pads zeros at start and delays signal; negative shift pads zeros at end and advances signal.
+    """
     f, fs, dur = 2, 10, 1.0
     t, x = generate_sine_wave(f, dur, fs)
 
@@ -50,6 +50,9 @@ def test_time_shift():
 
 
 def test_add_signals():
+    """
+    Add signals: returns same time vector and pointwise sum; raises ValueError when lengths differ.
+    """
     fs, dur = 50, 1.0
     t, x1 = generate_sine_wave(3, dur, fs)
     _, x2 = generate_sine_wave(7, dur, fs)

@@ -43,8 +43,8 @@ This repo uses a `pyproject.toml` to declare the build system and dependencies.
            - share of +amplitude ≈ duty
            - empty arrays when duration = 0
         3) test_time_shift()
-           - positive shift → leading zeros, rest matches original
-           - negative shift → trailing zeros, rest matches original
+           - positive shift -> leading zeros, rest matches original
+           - negative shift -> trailing zeros, rest matches original
         4) test_add_signals()
            - time unchanged; sum equals x1 + x2
            - error if signal lengths differ

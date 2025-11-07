@@ -13,6 +13,7 @@ def test_generate_sine_wave():
     t0, y0 = generate_sine_wave(5, 0, 100)
     assert len(t0) == 0 and len(y0) == 0
 
+
 def test_generate_square():
     f, fs, dur, amp, duty = 5, 100, 1.0, 2.0, 0.25
     t, x = generate_square(f, dur, fs, amplitude=amp, duty=duty)
@@ -24,3 +25,14 @@ def test_generate_square():
 
     t0, x0 = generate_square(f, 0.0, fs, amplitude=amp, duty=duty)
     assert len(t0) == 0 and len(x0) == 0
+
+
+def test_time_shift():
+    f, fs, dur = 2, 10, 1.0
+    t, x = generate_sine_wave(f, dur, fs)
+
+    _, y = time_shift(t, x, shift_seconds=0.2, sample_rate=fs)
+    assert np.allclose(y[:2], 0.0)
+
+    _, z = time_shift(t, x, shift_seconds=-0.2, sample_rate=fs)
+    assert np.allclose(z[-2:], 0.0)

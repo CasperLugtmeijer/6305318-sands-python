@@ -49,3 +49,7 @@ This repo uses a `pyproject.toml` to declare the build system and dependencies.
            - time unchanged; sum equals x1 + x2
            - error if signal lengths differ
 
+# How to run the files
+    1) python run2.py
+    2) pytest test.py
+

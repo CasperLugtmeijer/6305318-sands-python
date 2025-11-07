@@ -62,14 +62,14 @@ def time_shift(t, x, shift_seconds, sample_rate):
 
 def add_signals(t, x1, x2):
     """
-    Add wo signals sample by sample.
+    Add two signals sample by sample.
 
     Parameters:
     t : np.ndarray # time vector (returned unchanged)
     x1 : np.ndarray # first signal
     x2 : np.ndarray # second signal (same length as x1)
 
-    Returns:
+    Return:
     t : np.ndarray # same time vector as input
     y : np.ndarray # x1 + x2
     """

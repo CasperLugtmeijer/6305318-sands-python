@@ -1,3 +1,16 @@
+"""
+Generates a sine wave, prints first 10 samples, and plots it.
+Generates a square wave, plots it, then plots a time-shifted version.
+Generates two sines and plots their sum.
+
+Parameters:
+Set as variables in the script:
+frequency, duration, sample_rate, amplitude, duty, tau, f1, f2.
+
+Returns:
+None
+"""
+
 from signals2 import generate_sine_wave
 import matplotlib.pyplot as plt
 

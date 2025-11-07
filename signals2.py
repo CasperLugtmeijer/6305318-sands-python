@@ -18,7 +18,7 @@ def time_shift(t, x, shift_seconds, sample_rate):
     if n >= 0:
         y[n:]=x[:len(x)-n]
     else:
-        y[len(x)+n] = x[-n:]
+        y[:len(x)+n] = x[-n:]
     return t, y
 
 def add_signals(t, x1, x2):

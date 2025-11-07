@@ -2,6 +2,10 @@ import numpy as np
 from signals2 import generate_sine_wave, generate_square, time_shift, add_signals
 
 def test_generate_sine_wave():
+    """
+    Sine: correct length, starts at 0, and reaches +1 at a quarter period.Also checks the  edge case duration=0 returns empty arrays.
+    """
+    
     t, y = generate_sine_wave(5, 2, 100)
     assert len(t) == 200
     assert y[0] == 0
@@ -15,6 +19,9 @@ def test_generate_sine_wave():
 
 
 def test_generate_square():
+    """
+    quare: values only ±amplitude, duty cycle close to requested, and duration=0 returns empty arrays.
+    """
     f, fs, dur, amp, duty = 5, 100, 1.0, 2.0, 0.25
     t, x = generate_square(f, dur, fs, amplitude=amp, duty=duty)
 
@@ -28,6 +35,8 @@ def test_generate_square():
 
 
 def test_time_shift():
+    """
+    
     f, fs, dur = 2, 10, 1.0
     t, x = generate_sine_wave(f, dur, fs)
 

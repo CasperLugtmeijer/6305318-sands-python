@@ -33,6 +33,9 @@ def test_time_shift():
 
     _, y = time_shift(t, x, shift_seconds=0.2, sample_rate=fs)
     assert np.allclose(y[:2], 0.0)
+    assert np.allclose(y[2:], x[:-2])
 
     _, z = time_shift(t, x, shift_seconds=-0.2, sample_rate=fs)
     assert np.allclose(z[-2:], 0.0)
+    assert np.allclose(z[:-2], x[2:])
+

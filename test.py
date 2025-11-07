@@ -39,3 +39,18 @@ def test_time_shift():
     assert np.allclose(z[-2:], 0.0)
     assert np.allclose(z[:-2], x[2:])
 
+
+def test_add_signals():
+    fs, dur = 50, 1.0
+    t, x1 = generate_sine_wave(3, dur, fs)
+    _, x2 = generate_sine_wave(7, dur, fs)
+
+    tout, y = add_signals(t, x1, x2)
+    assert np.allclose(tout, t)
+    assert np.allclose(y, x1 + x2)
+
+    try:
+        add_signals(t, x1[:-1], x2)
+        assert False, "Expected ValueError for different lengths"
+    except ValueError:
+        pass
